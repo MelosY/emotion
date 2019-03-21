@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{31CFFCE8-2464-080A-5E7A-32265C8A0DFA}</ProjectGuid>
+    <ProjectGuid>{CE09F1D5-3DFA-DD28-5B6A-6A415919A100}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -63,16 +63,16 @@
      <Compile Include="Assets\Scripts\player\playerUnit.cs" />
      <Compile Include="Assets\Scripts\UI\UIController.cs" />
  <Reference Include="UnityEditor.StandardEvents">
- <HintPath>C:/Users/31311/Desktop/组织学习/冰岩/项目夹/rouge like/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+ <HintPath>C:/Users/31311/Desktop/组织学习/冰岩/项目夹/rouge like/emotion/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>C:/Users/31311/Desktop/组织学习/冰岩/项目夹/rouge like/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ <HintPath>C:/Users/31311/Desktop/组织学习/冰岩/项目夹/rouge like/emotion/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.PackageManagerUI.Editor">
- <HintPath>C:/Users/31311/Desktop/组织学习/冰岩/项目夹/rouge like/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+ <HintPath>C:/Users/31311/Desktop/组织学习/冰岩/项目夹/rouge like/emotion/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
- <HintPath>C:/Users/31311/Desktop/组织学习/冰岩/项目夹/rouge like/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ <HintPath>C:/Users/31311/Desktop/组织学习/冰岩/项目夹/rouge like/emotion/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>C:/install/unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

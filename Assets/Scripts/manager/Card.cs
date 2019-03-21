@@ -1,22 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Card : MonoBehaviour {
 
     public class Card_
     {
+          public GameObject image;
           public string name;
           public int[] types;
           public int[] counts;
     }
     
     List<List<Card_>> decks=new List<List<Card_>> ();
-
-    public void createCard(int type,string name, int[] types,int[] counts)
+    List<List<Card_>> handCard=new List<List<Card_>> ();
+    public void createCard(int type,GameObject image,string name, int[] types,int[] counts)
     {
             Card_ temp =new Card_();
             temp.name = name;
+            temp.image = image;
             temp.types = types;
             temp.counts = counts;
             decks[type].Add(temp);
@@ -52,6 +55,11 @@ public class Card : MonoBehaviour {
     public void destroyDeck(int type)
     {
             decks.Remove(decks[type]);
+    }
+
+    public void washDeck(int type)
+    {
+        
     }
 }
 

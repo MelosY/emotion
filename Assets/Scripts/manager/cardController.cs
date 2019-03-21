@@ -13,23 +13,26 @@ public class cardController : MonoBehaviour
 		int[] temp_type={1};
 		int[] temp_counts={2};
 		card.createCard(0,Images[0],"attack",temp_type,temp_counts);
+		card.createCard(0,Images[1],"attack",temp_type,temp_counts);
 		card.createCard(0,Images[0],"attack",temp_type,temp_counts);
+		card.createCard(0,Images[1],"attack",temp_type,temp_counts);
+		card.createCard(0,Images[0],"attack",temp_type,temp_counts);
+		card.createCard(0,Images[1],"attack",temp_type,temp_counts);
+		card.createCard(0,Images[0],"attack",temp_type,temp_counts);
+		card.createCard(0,Images[1],"attack",temp_type,temp_counts);
 	}
 
 	public void create1()
 	{
 		int[] temp_type={1};
 		int[] temp_counts={2};
-		card.createCard(0,Images[0],"attack",temp_type,temp_counts);
-		card.createCard(0,Images[0],"attack",temp_type,temp_counts);
+		card.createCard(1,Images[0],"attack",temp_type,temp_counts);
+		card.createCard(1,Images[1],"attack",temp_type,temp_counts);
 	}
 
-	public void createCard(GameObject image, Vector3 position,Quaternion createRotation)
+	public void drawCard(int type)
 	{
-		GameObject itemGo = Instantiate(image, position, createRotation);
-		itemGo.transform.SetParent(gameObject.transform);
-		itemPositionList.Add(createPosition);
-
+		card.getHandCard(type);
 	}
 	
 }

@@ -9,16 +9,23 @@ public class executeManager : MonoBehaviour
 	public healthManager health_manager;
 	// Use this for initialization
 	void Start () {
-		
+		//card_controll.drawCard(0);
+		//card_controll.drawCard(0);
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKey("k"))
 		{
-			execute(0,0);
-			print(1);
-			execute(1,0);
+			card_controll.drawCard(0);
+			card_controll.card.showCard(new Vector3(-6,-4,0), new Vector3(6,-4,0), Quaternion.identity);
+			//	execute(1,0);
+		}
+		if (Input.GetKey("k"))
+		{
+			//execute(0,0);
+		
+	      //execute(1,0);
 		}
 		
 	}

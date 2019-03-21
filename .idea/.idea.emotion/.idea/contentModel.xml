@@ -25,6 +25,7 @@
             <e p="healthManager.cs" t="Include" />
           </e>
           <e p="player" t="Include">
+            <e p="objectUnit.cs" t="Include" />
             <e p="playerController.cs" t="Include" />
             <e p="playerUnit.cs" t="Include" />
           </e>
@@ -37,9 +38,7 @@
       <e p="Library" t="ExcludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="packages" t="ExcludeRecursive" />
-      <e p="Temp" t="ExcludeRecursive">
-        <e p="bin" t="ExcludeRecursive" />
-      </e>
+      <e p="Temp\bin" t="ExcludeRecursive" />
     </e>
   </component>
 </project>

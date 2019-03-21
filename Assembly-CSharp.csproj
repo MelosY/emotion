@@ -59,6 +59,7 @@
      <Compile Include="Assets\Scripts\manager\executeManager.cs" />
      <Compile Include="Assets\Scripts\manager\Health.cs" />
      <Compile Include="Assets\Scripts\manager\healthManager.cs" />
+     <Compile Include="Assets\Scripts\player\objectUnit.cs" />
      <Compile Include="Assets\Scripts\player\playerController.cs" />
      <Compile Include="Assets\Scripts\player\playerUnit.cs" />
      <Compile Include="Assets\Scripts\UI\UIController.cs" />

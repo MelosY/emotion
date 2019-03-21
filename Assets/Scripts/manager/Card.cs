@@ -92,11 +92,20 @@ public class Card : MonoBehaviour {
     }
     public void showCard(Vector3 startPosition,Vector3 endPosition,Quaternion createRotation)
     {
-        BroadcastMassage("blockDestroy"); 
+       // print(handCards[0].Count);
+        int childCount = transform.childCount;
+        print(childCount);
+        for (int i = 0; i < childCount; i++)
+        {
+            Destroy(transform.GetChild(i).gameObject);
+            print(1);
+        }
+
         Vector3 interval = (endPosition - startPosition) / handCards[0].Count;
+        
         foreach (var temp in handCards[0])
         {
-            
+            print("ss"+handCards[0].Count);
             GameObject itemGo = Instantiate(temp.image, startPosition+interval, createRotation);
             itemGo.transform.SetParent(gameObject.transform);
             startPosition += interval;

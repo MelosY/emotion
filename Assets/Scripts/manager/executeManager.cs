@@ -8,9 +8,12 @@ public class executeManager : MonoBehaviour
 	public cardController card_controll;
 	public healthManager health_manager;
 	// Use this for initialization
-	void Start () {
-		//card_controll.drawCard(0);
-		//card_controll.drawCard(0);
+	void Start ()
+	{
+		int i;
+		for(i=0;i<8;i++)
+			card_controll.drawCard(0);
+		card_controll.card.showCard(new Vector3(-3,-2,0), new Vector3(3,-2,0), Quaternion.identity);	
 	}
 	
 	// Update is called once per frame
@@ -18,7 +21,7 @@ public class executeManager : MonoBehaviour
 		if (Input.GetKey("k"))
 		{
 			card_controll.drawCard(0);
-			card_controll.card.showCard(new Vector3(-6,-4,0), new Vector3(6,-4,0), Quaternion.identity);
+			card_controll.card.showCard(new Vector3(-3,0,0), new Vector3(3,0,0), Quaternion.identity);
 			//	execute(1,0);
 		}
 		if (Input.GetKey("k"))

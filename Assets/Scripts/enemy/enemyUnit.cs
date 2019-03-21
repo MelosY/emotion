@@ -7,7 +7,7 @@ public class enemyUnit : MonoBehaviour {
 	public healthManager health_manager;
 	public cardController card_controll;
 	
-	void Start () {
+	void Awake () {
 		health_manager.create("majika",100);
 		card_controll.card.createDeck(1);
 		card_controll.create1();

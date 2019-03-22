@@ -29,6 +29,9 @@
             <e p="playerController.cs" t="Include" />
             <e p="playerUnit.cs" t="Include" />
           </e>
+          <e p="system" t="Include">
+            <e p="NewBehaviourScript.cs" t="Include" />
+          </e>
           <e p="UI" t="Include">
             <e p="UIController.cs" t="Include" />
           </e>
@@ -38,7 +41,9 @@
       <e p="Library" t="ExcludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="packages" t="ExcludeRecursive" />
-      <e p="Temp\bin" t="ExcludeRecursive" />
+      <e p="Temp" t="ExcludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+      </e>
     </e>
   </component>
 </project>

@@ -94,18 +94,18 @@ public class Card : MonoBehaviour {
     {
        // print(handCards[0].Count);
         int childCount = transform.childCount;
-        print(childCount);
+      
         for (int i = 0; i < childCount; i++)
         {
             Destroy(transform.GetChild(i).gameObject);
-            print(1);
+           // print(1);
         }
 
         Vector3 interval = (endPosition - startPosition) / handCards[0].Count;
         
         foreach (var temp in handCards[0])
         {
-            print("ss"+handCards[0].Count);
+           // print("ss"+handCards[0].Count);
             GameObject itemGo = Instantiate(temp.image, startPosition+interval, createRotation);
             itemGo.transform.SetParent(gameObject.transform);
             startPosition += interval;
@@ -114,6 +114,21 @@ public class Card : MonoBehaviour {
         //itemPositionList.Add(createPosition);
     }
 
+    public int getLenHand()
+    {
+        return handCards[0].Count;
+    }
 
+    public void forwardCard(int index_now,int index_last)
+    {
+    
+            transform.GetChild(index_now).position=transform.GetChild(index_now).position+new Vector3(0,0.5f,0);
+            if (index_last >= 0)
+            {
+                transform.GetChild(index_last).position=transform.GetChild(index_last).position-new Vector3(0,0.5f,0);
+            }
+       
+       // print(1);
+    }
 }
 

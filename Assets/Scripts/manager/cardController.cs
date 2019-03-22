@@ -20,6 +20,14 @@ public class cardController : MonoBehaviour
 		card.createCard(0,Images[1],"attack",temp_type,temp_counts);
 		card.createCard(0,Images[0],"attack",temp_type,temp_counts);
 		card.createCard(0,Images[1],"attack",temp_type,temp_counts);
+		card.createCard(0,Images[0],"attack",temp_type,temp_counts);
+		card.createCard(0,Images[1],"attack",temp_type,temp_counts);
+		card.createCard(0,Images[0],"attack",temp_type,temp_counts);
+		card.createCard(0,Images[1],"attack",temp_type,temp_counts);
+		card.createCard(0,Images[0],"attack",temp_type,temp_counts);
+		card.createCard(0,Images[1],"attack",temp_type,temp_counts);
+		card.createCard(0,Images[0],"attack",temp_type,temp_counts);
+		card.createCard(0,Images[1],"attack",temp_type,temp_counts);
 	}
 
 	public void create1()

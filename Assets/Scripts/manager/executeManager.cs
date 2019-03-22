@@ -7,6 +7,10 @@ public class executeManager : MonoBehaviour
 
 	public cardController card_controll;
 	public healthManager health_manager;
+
+	public int last_position = -1;
+	public int now_position = -1;
+
 	// Use this for initialization
 	void Start ()
 	{
@@ -15,22 +19,24 @@ public class executeManager : MonoBehaviour
 			card_controll.drawCard(0);
 		card_controll.card.showCard(new Vector3(-3,-2,0), new Vector3(3,-2,0), Quaternion.identity);	
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		if (Input.GetKey("k"))
+
+	void Update ()
+	{
+		if (Input.GetKeyUp("d"))
 		{
-			card_controll.drawCard(0);
-			card_controll.card.showCard(new Vector3(-3,0,0), new Vector3(3,0,0), Quaternion.identity);
-			//	execute(1,0);
+			StartCoroutine(move());
+
 		}
-		if (Input.GetKey("k"))
+		if (Input.GetKeyUp("k"))
 		{
-			//execute(0,0);
-		
-	      //execute(1,0);
+			execute(0,now_position);
+			card_controll.card.showCard(new Vector3(-3,-2,0), new Vector3(3,-2,0), Quaternion.identity);
+			last_position = -1;
+			now_position = -1;
 		}
 		
+
+		   
 	}
 	
 	public void execute(int type,int x)
@@ -51,8 +57,18 @@ public class executeManager : MonoBehaviour
 				health_manager.damage("player",temp.counts[0]);
 			}
 
-		}
-		
+		}	
+	}
+
+	public IEnumerator move()
+	{
+		yield return new  WaitForSeconds(0.1f);
+		print(233);
+		now_position = (now_position + 1) % (card_controll.card.getLenHand());
+		card_controll.card.forwardCard(now_position,last_position);
+		yield return new  WaitForSeconds(0.1f);
+		last_position = now_position;
+		print(12);
 	}
 	
 

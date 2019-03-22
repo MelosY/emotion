@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class objectUnit : MonoBehaviour {
+public class objectUnit : MonoBehaviour
+{
 
-	// Use this for initialization
+	/*public executeManager ExecuteManager; 
 	void Start () {
 		
 	}
@@ -13,4 +14,14 @@ public class objectUnit : MonoBehaviour {
 	void Update () {
 		
 	}
+
+	private void OnMouseOver()
+	{
+		transform.position+=new Vector3(0,0.5f,0);
+	}
+
+	private void OnMouseDown()
+	{
+		ExecuteManager.execute();
+	}*/
 }

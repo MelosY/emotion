@@ -34,9 +34,9 @@ public class Card : MonoBehaviour {
     {
             Card_ temp =handCards[type][x];
             destroyCard(type, x);
+    
             return temp;
     }
-
     
     public void removeCard(int type, int x)
     {

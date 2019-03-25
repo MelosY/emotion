@@ -36,6 +36,18 @@ public class cardController : MonoBehaviour
 		int[] temp_counts={2};
 		card.createCard(1,Images[0],"attack",temp_type,temp_counts);
 		card.createCard(1,Images[1],"attack",temp_type,temp_counts);
+		card.createCard(1,Images[0],"attack",temp_type,temp_counts);
+		card.createCard(1,Images[1],"attack",temp_type,temp_counts);
+		card.createCard(1,Images[0],"attack",temp_type,temp_counts);
+		card.createCard(1,Images[1],"attack",temp_type,temp_counts);
+		card.createCard(1,Images[0],"attack",temp_type,temp_counts);
+		card.createCard(1,Images[0],"attack",temp_type,temp_counts);
+		card.createCard(1,Images[1],"attack",temp_type,temp_counts);
+		card.createCard(1,Images[0],"attack",temp_type,temp_counts);
+		card.createCard(1,Images[1],"attack",temp_type,temp_counts);
+		card.createCard(1,Images[0],"attack",temp_type,temp_counts);
+		card.createCard(1,Images[1],"attack",temp_type,temp_counts);
+		card.createCard(1,Images[0],"attack",temp_type,temp_counts);
 	}
 
 	public void drawCard(int type)

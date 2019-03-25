@@ -162,12 +162,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 188850050}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -91.99281, y: 712.84454, z: 1.1749732}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &188850054
 MonoBehaviour:
@@ -299,6 +299,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health_manager: {fileID: 188850052}
   card_controll: {fileID: 188850055}
+  execute_manager: {fileID: 188850056}
 --- !u!1 &495946428
 GameObject:
   m_ObjectHideFlags: 0
@@ -636,6 +637,50 @@ RectTransform:
   m_AnchoredPosition: {x: -1.5999985, y: -1}
   m_SizeDelta: {x: -15, y: 2}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &888537179
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 888537180}
+  - component: {fileID: 888537181}
+  m_Layer: 0
+  m_Name: AllSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &888537180
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 888537179}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.8095248, y: 4.9365945, z: -0.13671875}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &888537181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 888537179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e353f060b43053d4a9a89410d2549c69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1586252472}
+  enemy: {fileID: 432036570}
+  isEnemyRound: 0
+  isPlayerRound: 1
 --- !u!1 &946818700
 GameObject:
   m_ObjectHideFlags: 0
@@ -906,6 +951,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health_manager: {fileID: 188850052}
   card_controll: {fileID: 188850055}
+  execute_manager: {fileID: 188850056}
 --- !u!212 &1586252473
 SpriteRenderer:
   m_ObjectHideFlags: 0

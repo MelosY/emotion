@@ -62,7 +62,7 @@
      <Compile Include="Assets\Scripts\player\objectUnit.cs" />
      <Compile Include="Assets\Scripts\player\playerController.cs" />
      <Compile Include="Assets\Scripts\player\playerUnit.cs" />
-     <Compile Include="Assets\Scripts\system\NewBehaviourScript.cs" />
+     <Compile Include="Assets\Scripts\system\battleSystem.cs" />
      <Compile Include="Assets\Scripts\UI\UIController.cs" />
  <Reference Include="UnityEditor.StandardEvents">
  <HintPath>C:/Users/31311/Desktop/组织学习/冰岩/项目夹/emotion/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>

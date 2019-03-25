@@ -89,25 +89,35 @@ public class Card : MonoBehaviour {
         //print(decks[type].Count);
         removeCard(type,0);
         handCards[type].Add(temp);  
+        
     }
-    public void showCard(Vector3 startPosition,Vector3 endPosition,Quaternion createRotation)
+    public void showCard(int type,Vector3 startPosition,Vector3 endPosition,Quaternion createRotation)
     {
-       // print(handCards[0].Count);
-        int childCount = transform.childCount;
+        GameObject playerCard=GameObject.Find("playerDeck");
+        GameObject enemyCard=GameObject.Find("enemyDeck");
+        GameObject tempObject;
+        if (type == 0)
+        {
+            tempObject = playerCard;
+        }
+        else
+        {
+            tempObject = enemyCard;
+        }
+        int childCount = tempObject.transform.childCount;
       
         for (int i = 0; i < childCount; i++)
         {
-            Destroy(transform.GetChild(i).gameObject);
-           // print(1);
+            Destroy(tempObject.transform.GetChild(i).gameObject);
         }
 
-        Vector3 interval = (endPosition - startPosition) / handCards[0].Count;
+        Vector3 interval = (endPosition - startPosition) / handCards[type].Count;
         
-        foreach (var temp in handCards[0])
+        foreach (var temp in handCards[type])
         {
            // print("ss"+handCards[0].Count);
             GameObject itemGo = Instantiate(temp.image, startPosition+interval, createRotation);
-            itemGo.transform.SetParent(gameObject.transform);
+            itemGo.transform.SetParent(tempObject.transform);
             startPosition += interval;
         }
       
@@ -121,11 +131,11 @@ public class Card : MonoBehaviour {
 
     public void forwardCard(int index_now,int index_last)
     {
-    
-            transform.GetChild(index_now).position=transform.GetChild(index_now).position+new Vector3(0,0.5f,0);
+            GameObject playerCard=GameObject.Find("playerDeck");
+            playerCard.transform.GetChild(index_now).position=playerCard.transform.GetChild(index_now).position+new Vector3(0,0.5f,0);
             if (index_last >= 0)
             {
-                transform.GetChild(index_last).position=transform.GetChild(index_last).position-new Vector3(0,0.5f,0);
+                playerCard.transform.GetChild(index_last).position=playerCard.transform.GetChild(index_last).position-new Vector3(0,0.5f,0);
             }
        
        // print(1);

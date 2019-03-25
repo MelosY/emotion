@@ -15,13 +15,14 @@ public class executeManager : MonoBehaviour
 	void Start ()
 	{
 		int i;
-		for (i = 0; i < 8; i++)
+		for (i = 0; i < 6; i++)
 		{
 			card_controll.drawCard(0);
 			card_controll.drawCard(1);
 		}
 			
-		card_controll.card.showCard(new Vector3(-3,-2,0), new Vector3(3,-2,0), Quaternion.identity);	
+		card_controll.card.showCard(0,new Vector3(-3,-2,0), new Vector3(3,-2,0), Quaternion.identity);	
+		card_controll.card.showCard(1,new Vector3(-3,4,0), new Vector3(3,4,0), Quaternion.identity);	
 	}
 
 	public  void playerRound ()
@@ -34,7 +35,7 @@ public class executeManager : MonoBehaviour
 		if (Input.GetKeyUp("k"))
 		{
 			execute(0,now_position);
-			card_controll.card.showCard(new Vector3(-3,-2,0), new Vector3(3,-2,0), Quaternion.identity);
+			card_controll.card.showCard(0,new Vector3(-3,-2,0), new Vector3(3,-2,0), Quaternion.identity);
 			last_position = -1;
 			now_position = -1;
 		}	   
@@ -45,6 +46,7 @@ public class executeManager : MonoBehaviour
 		if (Input.GetKeyUp("x"))
 		{
 			execute(1,0);
+			card_controll.card.showCard(1,new Vector3(-3,4,0), new Vector3(3,4,0), Quaternion.identity);
 
 		}
 	}

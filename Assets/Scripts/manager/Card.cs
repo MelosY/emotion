@@ -89,6 +89,7 @@ public class Card : MonoBehaviour {
         //print(decks[type].Count);
         removeCard(type,0);
         handCards[type].Add(temp);  
+        //showCard();
         
     }
     public void showCard(int type,Vector3 startPosition,Vector3 endPosition,Quaternion createRotation)
@@ -115,10 +116,11 @@ public class Card : MonoBehaviour {
         
         foreach (var temp in handCards[type])
         {
-           // print("ss"+handCards[0].Count);
+            
             GameObject itemGo = Instantiate(temp.image, startPosition+interval, createRotation);
             itemGo.transform.SetParent(tempObject.transform);
             startPosition += interval;
+            itemGo.GetComponent<objectUnit>().showBack(type);
         }
       
         //itemPositionList.Add(createPosition);

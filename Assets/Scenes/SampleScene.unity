@@ -195,7 +195,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   card: {fileID: 188850054}
   Images:
-  - {fileID: 1862200369233222, guid: f3d46fd78dc57b54082274b0333980ab, type: 2}
+  - {fileID: 1947891417421286, guid: cccd7878d895b67458ca8517f7f14cc8, type: 2}
   - {fileID: 1947891417421286, guid: eef071f038d6bfe48834ff3e0911fb71, type: 2}
 --- !u!114 &188850056
 MonoBehaviour:

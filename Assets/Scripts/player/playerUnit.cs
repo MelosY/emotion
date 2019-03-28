@@ -17,6 +17,6 @@ public class playerUnit : MonoBehaviour
 	public void roundStart()
 	{
 		execute_manager.playerRound();
-		print("1");
+
 	}
 }

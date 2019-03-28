@@ -79,7 +79,7 @@ public class executeManager : MonoBehaviour
 		card_controll.card.forwardCard(now_position,last_position);
 		yield return new  WaitForSeconds(0.1f);
 		last_position = now_position;
-		print(12);
+	
 	}
 	
 

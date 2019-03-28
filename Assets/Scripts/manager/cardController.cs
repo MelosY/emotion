@@ -53,6 +53,15 @@ public class cardController : MonoBehaviour
 	public void drawCard(int type)
 	{
 		card.getHandCard(type);
+		if (type == 0)
+		{
+			card.showCard(0,new Vector3(-3,-2.5f,0), new Vector3(3,-2.5f,0), Quaternion.identity);	
+		}
+		else
+		{
+			card.showCard(1,new Vector3(-3,3,0), new Vector3(3,3,0), Quaternion.identity);
+		}
+			
 	}
 	
 }

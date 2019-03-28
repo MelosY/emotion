@@ -33,6 +33,17 @@ public class Card : MonoBehaviour {
     public Card_ useCard(int type, int x)
     {
             Card_ temp =handCards[type][x];
+      if (type == 0)
+        {
+            GameObject playerCard=GameObject.Find("playerDeck");
+            playerCard.transform.GetChild(x).position=new Vector3(1.5f,1f,0);
+            print(playerCard.transform.GetChild(x).position);
+        }
+        else
+        {
+            GameObject playerCard=GameObject.Find("enemyDeck");
+            playerCard.transform.GetChild(x).position=new Vector3(1.5f,1f,0);
+        }
             destroyCard(type, x);
     
             return temp;
@@ -142,5 +153,7 @@ public class Card : MonoBehaviour {
        
        // print(1);
     }
+
+   
 }
 

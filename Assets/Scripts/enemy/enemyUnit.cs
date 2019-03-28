@@ -21,6 +21,6 @@ public class enemyUnit : MonoBehaviour {
 	public void roundStart()
 	{
 		execute_manager.enemyRound();
-		//print("12312");
+
 	}
 }

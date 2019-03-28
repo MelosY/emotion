@@ -6,9 +6,11 @@ using UnityEngine.UI;
 public class UIController : MonoBehaviour {
 
 	// Use this for initialization
-	public enemyUnit player;//先改一下
-	public Slider healthLine;
-	public Text text_health;
+	public playerUnit player;//先改一下
+	public Slider slider_player;
+	public Text text_player;
+	public Slider slider_enemy;
+	public Text text_enemy;
 	void Start () {
 		
 	}
@@ -16,7 +18,9 @@ public class UIController : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
-		healthLine.value = player.health_manager.show("majika");
-		text_health.text = player.health_manager.show("player").ToString();
+		slider_player.value = player.health_manager.show("player");
+		text_player.text = player.health_manager.show("player").ToString();
+		slider_enemy.value = player.health_manager.show("majika");
+		text_enemy.text = player.health_manager.show("majika").ToString();
 	}
 }

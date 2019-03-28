@@ -21,8 +21,8 @@ public class executeManager : MonoBehaviour
 			card_controll.drawCard(1);
 		}
 			
-		card_controll.card.showCard(0,new Vector3(-3,-2,0), new Vector3(3,-2,0), Quaternion.identity);	
-		card_controll.card.showCard(1,new Vector3(-3,4,0), new Vector3(3,4,0), Quaternion.identity);	
+		card_controll.card.showCard(0,new Vector3(-3,-2.5f,0), new Vector3(3,-2.5f,0), Quaternion.identity);	
+		card_controll.card.showCard(1,new Vector3(-3,3,0), new Vector3(3,3,0), Quaternion.identity);	
 	}
 
 	public  void playerRound ()
@@ -35,7 +35,8 @@ public class executeManager : MonoBehaviour
 		if (Input.GetKeyUp("k"))
 		{
 			execute(0,now_position);
-			card_controll.card.showCard(0,new Vector3(-3,-2,0), new Vector3(3,-2,0), Quaternion.identity);
+			StartCoroutine(waitPlayer(1.0f));
+			//card_controll.card.showCard(0,new Vector3(-3,-2.5f,0), new Vector3(3,-2.5f,0), Quaternion.identity);	
 			last_position = -1;
 			now_position = -1;
 		}	   
@@ -46,8 +47,8 @@ public class executeManager : MonoBehaviour
 		if (Input.GetKeyUp("x"))
 		{
 			execute(1,0);
-			card_controll.card.showCard(1,new Vector3(-3,4,0), new Vector3(3,4,0), Quaternion.identity);
-
+			//card_controll.card.showCard(1,new Vector3(-3,3,0), new Vector3(3,3,0), Quaternion.identity);	
+			StartCoroutine(waitEnemy(1.0f));
 		}
 	}
 	public void execute(int type,int x)
@@ -81,6 +82,17 @@ public class executeManager : MonoBehaviour
 		last_position = now_position;
 	
 	}
-	
+
+	public IEnumerator waitPlayer(float x)
+	{
+		yield return new WaitForSeconds(x);
+		card_controll.card.showCard(0,new Vector3(-3,-2.5f,0), new Vector3(3,-2.5f,0), Quaternion.identity);	
+	}
+
+	public IEnumerator waitEnemy(float x)
+	{
+		yield return new WaitForSeconds(x);
+		card_controll.card.showCard(1,new Vector3(-3,3,0), new Vector3(3,3,0), Quaternion.identity);
+	}
 
 }

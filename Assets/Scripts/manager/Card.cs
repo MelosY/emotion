@@ -123,8 +123,8 @@ public class Card : MonoBehaviour {
             Destroy(tempObject.transform.GetChild(i).gameObject);
         }
 
-        Vector3 interval = (endPosition - startPosition) / handCards[type].Count;
-        
+        Vector3 interval = new Vector3(0.7f,0,0);
+        print(interval);
         foreach (var temp in handCards[type])
         {
             
@@ -137,10 +137,16 @@ public class Card : MonoBehaviour {
         //itemPositionList.Add(createPosition);
     }
 
-    public int getLenHand()
+    public int getLenHand(int type)
     {
-        return handCards[0].Count;
+        return handCards[type].Count;
     }
+    
+    public int getLenDeck(int type)
+    {
+        return decks[type].Count;
+    }
+    
 
     public void forwardCard(int index_now,int index_last)
     {

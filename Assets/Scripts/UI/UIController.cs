@@ -22,9 +22,16 @@ public class UIController : MonoBehaviour {
 	{
 		slider_player.value = player.health_manager.show("player");
 		text_player.text = player.health_manager.show("player").ToString();
-		slider_enemy.value = player.health_manager.show("majika");
-		text_enemy.text = player.health_manager.show("majika").ToString();
 		expense_player.text = player.expense_manager.show("player").ToString();
-		expense_enemy.text = player.expense_manager.show("majika").ToString();
+		if (player.health_manager.show("majika") > 0)
+		{
+			text_enemy.text = player.health_manager.show("majika").ToString();
+			slider_enemy.value = player.health_manager.show("majika");
+			expense_enemy.text = player.expense_manager.show("majika").ToString();
+		}
+		else
+		{
+			text_enemy.text = "怪物死了";
+		}
 	}
 }

@@ -19,6 +19,11 @@ public class expenseManager : MonoBehaviour
 		//print(123);
 	}
 
+	public void recover(string name, int count)
+	{
+		expense.AddExpense(name,count-expense.ShowExpense(name));
+	}
+
 	public  int show(string name)
 	{
 		return expense.ShowExpense(name);

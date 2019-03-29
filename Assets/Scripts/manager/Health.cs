@@ -39,7 +39,7 @@ public class Health : MonoBehaviour
 		health[i].count -= count;
 		if (health[i].count<=0)
 		{
-			health.RemoveAt(i);
+			//health.RemoveAt(i);
 			if (i == 0)
 			{
 				print("1");//后期改进

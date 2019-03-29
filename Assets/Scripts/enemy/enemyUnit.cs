@@ -9,8 +9,8 @@ public class enemyUnit : MonoBehaviour {
 	public cardController card_controll;
 	public executeManager execute_manager;
 	void Awake () {
-		health_manager.create("majika",100);
-		expense_manager.create("majika",5);
+		health_manager.create("majika",10);
+		expense_manager.create("majika",0);
 		card_controll.card.createDeck(1);
 		card_controll.create1();
 
@@ -24,5 +24,11 @@ public class enemyUnit : MonoBehaviour {
 	{
 		execute_manager.enemyRound();
 
+	}
+
+	public void dieEnemy()
+	{
+		card_controll.card.destroyDeck(1);//等等吧
+		//health_manager.health.r
 	}
 }

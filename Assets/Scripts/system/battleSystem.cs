@@ -18,6 +18,8 @@ public class battleSystem : MonoBehaviour
 	void Update () {
 		if (isPlayerRound)
 		{
+		   
+			//card_controll.card.showCard(1,new Vector3(-3,3,0), new Vector3(3,3,0), Quaternion.identity);	
 			if (isPlayDraw)
 			{
 				for (i = 0; i < 3; i++)
@@ -36,6 +38,7 @@ public class battleSystem : MonoBehaviour
 		{
 			if (isEnemyDraw)
 			{
+				player.card_controll.card.showCard(0,new Vector3(-3,-2.5f,0), new Vector3(3,-2.5f,0), Quaternion.identity);	
 				for (i = 0; i < 3; i++)
 				{
 					player.card_controll.drawCard(1);

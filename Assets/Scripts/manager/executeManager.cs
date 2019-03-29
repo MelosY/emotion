@@ -7,7 +7,7 @@ public class executeManager : MonoBehaviour
 
 	public cardController card_controll;
 	public healthManager health_manager;
-
+	public expenseManager expense_manager;
 	public int last_position = -1;
 	public int now_position = -1;
 
@@ -35,7 +35,7 @@ public class executeManager : MonoBehaviour
 		if (Input.GetKeyUp("k"))
 		{
 			execute(0,now_position);
-			StartCoroutine(waitPlayer(1.0f));
+			StartCoroutine(waitPlayer(0.5f));
 			//card_controll.card.showCard(0,new Vector3(-3,-2.5f,0), new Vector3(3,-2.5f,0), Quaternion.identity);	
 			last_position = -1;
 			now_position = -1;
@@ -48,7 +48,7 @@ public class executeManager : MonoBehaviour
 		{
 			execute(1,0);
 			//card_controll.card.showCard(1,new Vector3(-3,3,0), new Vector3(3,3,0), Quaternion.identity);	
-			StartCoroutine(waitEnemy(1.0f));
+			StartCoroutine(waitEnemy(0.5f));
 		}
 	}
 	public void execute(int type,int x)
@@ -56,6 +56,7 @@ public class executeManager : MonoBehaviour
 		Card.Card_ temp=card_controll.card.useCard(type, x);
 		if (type == 0)
 		{
+			expense_manager.damage("player",1);
 			if (temp.types[0] == 1)
 			{
 				health_manager.damage("majika",temp.counts[0]);
@@ -64,6 +65,7 @@ public class executeManager : MonoBehaviour
 		}
 		if (type == 1)
 		{
+			expense_manager.damage("majika",1);
 			if (temp.types[0] == 1)
 			{
 				health_manager.damage("player",temp.counts[0]);
@@ -94,5 +96,7 @@ public class executeManager : MonoBehaviour
 		yield return new WaitForSeconds(x);
 		card_controll.card.showCard(1,new Vector3(-3,3,0), new Vector3(3,3,0), Quaternion.identity);
 	}
+	
+	
 
 }

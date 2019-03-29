@@ -21,6 +21,8 @@
             <e p="Card.cs" t="Include" />
             <e p="cardController.cs" t="Include" />
             <e p="executeManager.cs" t="Include" />
+            <e p="expense.cs" t="Include" />
+            <e p="expenseManager.cs" t="Include" />
             <e p="Health.cs" t="Include" />
             <e p="healthManager.cs" t="Include" />
           </e>
@@ -41,7 +43,9 @@
       <e p="Library" t="ExcludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="packages" t="ExcludeRecursive" />
-      <e p="Temp\bin" t="ExcludeRecursive" />
+      <e p="Temp" t="ExcludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+      </e>
     </e>
   </component>
 </project>

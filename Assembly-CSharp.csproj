@@ -57,6 +57,8 @@
      <Compile Include="Assets\Scripts\manager\Card.cs" />
      <Compile Include="Assets\Scripts\manager\cardController.cs" />
      <Compile Include="Assets\Scripts\manager\executeManager.cs" />
+     <Compile Include="Assets\Scripts\manager\Expense.cs" />
+     <Compile Include="Assets\Scripts\manager\expenseManager.cs" />
      <Compile Include="Assets\Scripts\manager\Health.cs" />
      <Compile Include="Assets\Scripts\manager\healthManager.cs" />
      <Compile Include="Assets\Scripts\player\objectUnit.cs" />

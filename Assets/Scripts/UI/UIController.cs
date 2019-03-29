@@ -11,6 +11,8 @@ public class UIController : MonoBehaviour {
 	public Text text_player;
 	public Slider slider_enemy;
 	public Text text_enemy;
+	public Text expense_player;
+	public Text expense_enemy;
 	void Start () {
 		
 	}
@@ -22,5 +24,7 @@ public class UIController : MonoBehaviour {
 		text_player.text = player.health_manager.show("player").ToString();
 		slider_enemy.value = player.health_manager.show("majika");
 		text_enemy.text = player.health_manager.show("majika").ToString();
+		expense_player.text = player.expense_manager.show("player").ToString();
+		expense_enemy.text = player.expense_manager.show("majika").ToString();
 	}
 }

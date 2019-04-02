@@ -64,6 +64,7 @@
      <Compile Include="Assets\Scripts\player\objectUnit.cs" />
      <Compile Include="Assets\Scripts\player\playerController.cs" />
      <Compile Include="Assets\Scripts\player\playerUnit.cs" />
+     <Compile Include="Assets\Scripts\scene_\sceneManager.cs" />
      <Compile Include="Assets\Scripts\system\battleSystem.cs" />
      <Compile Include="Assets\Scripts\UI\UIController.cs" />
  <Reference Include="UnityEditor.StandardEvents">

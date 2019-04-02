@@ -31,6 +31,9 @@
             <e p="playerController.cs" t="Include" />
             <e p="playerUnit.cs" t="Include" />
           </e>
+          <e p="scene_" t="Include">
+            <e p="sceneManager.cs" t="Include" />
+          </e>
           <e p="system" t="Include">
             <e p="battleSystem.cs" t="Include" />
           </e>

@@ -6,8 +6,7 @@ public class executeManager : MonoBehaviour
 {
 
 	public cardController card_controll;
-	public healthManager health_manager;
-	public expenseManager expense_manager;
+	public consumeManager ConsumeManager;
 	public int last_position = -1;
 	public int now_position = -1;
 	public bool timeEnemy = true;
@@ -56,24 +55,25 @@ public class executeManager : MonoBehaviour
 		Card.Card_ temp=card_controll.card.useCard(type, x);
 		if (type == 0)
 		{
-			expense_manager.damage("player",1);
+			ConsumeManager.damage(0,"expense",1);
 			if (temp.types[0] == 1)
 			{
-				health_manager.damage("majika",temp.counts[0]);
+				ConsumeManager.damage(1,"health",temp.counts[0]);
 			}
 
 		}
 		if (type == 1)
 		{
-			expense_manager.damage("majika",1);
+			ConsumeManager.damage(1,"expense",1);
 			if (temp.types[0] == 1)
 			{
-				health_manager.damage("player",temp.counts[0]);
+				ConsumeManager.damage(0,"health",temp.counts[0]);
 			}
 
 		}	
 	}
 
+	
 	public IEnumerator move()
 	{
 		yield return new  WaitForSeconds(0.1f);
@@ -104,7 +104,7 @@ public class executeManager : MonoBehaviour
 
 	public bool decidePlayer()
 	{
-		if (card_controll.card.getLenHand(0) > 0 && expense_manager.expense.ShowExpense("player") > 0)
+		if (card_controll.card.getLenHand(0) > 0 && ConsumeManager.show(0,"expense") > 0)
 		{
 			return true;
 		}
@@ -114,7 +114,7 @@ public class executeManager : MonoBehaviour
 	
 	public bool decideEnemy()
 	{
-		if (card_controll.card.getLenHand(1) > 0 && expense_manager.expense.ShowExpense("majika") > 0 && timeEnemy)
+		if (card_controll.card.getLenHand(1) > 0 && ConsumeManager.show(1,"expense") > 0 && timeEnemy)
 		{
 			return true;
 		}

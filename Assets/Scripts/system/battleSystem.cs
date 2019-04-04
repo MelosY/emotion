@@ -6,9 +6,8 @@ using UnityEngine.SocialPlatforms;
 public class battleSystem : MonoBehaviour
 {
 	private int i;
-	public playerUnit player;
 
-	public enemyUnit enemy;
+	public peopleUnit people;
 
 	public bool isEnemyRound = false;
 	public bool isPlayerRound = true;
@@ -23,24 +22,24 @@ public class battleSystem : MonoBehaviour
 			if (isPlayDraw)
 			{
 				i = 0;
-				while (player.card_controll.card.getLenHand(0) <=15 && player.card_controll.card.getLenDeck(0) > 0 && i<3 )
+				while (people.card_controll.card.getLenHand(0) <=15 && people.card_controll.card.getLenDeck(0) > 0 && i<3 )
 				{
-					player.card_controll.drawCard(0);
+					people.card_controll.drawCard(0);
 					i++;
 				}
 					
 				
-				player.expense_manager.recover("majika",5);
+				people.recover(1,"expense",5);
 				isPlayDraw = false;
 				isEnemyDraw = true;
 
 			}
-			player.roundStart();
+			people.roundStartPlayer();
 			if (Input.GetKeyUp("z"))
 			{
-				enemy.execute_manager.last_position = -1;
-				enemy.execute_manager.now_position = -1;
-				player.expense_manager.recover("player",5);
+				people.execute_manager.last_position = -1;
+				people.execute_manager.now_position = -1;
+				people.recover(0,"expense",5);
 				isEnemyRound = true;
 				isPlayerRound = false;
 			}
@@ -51,11 +50,11 @@ public class battleSystem : MonoBehaviour
 		{
 			if (isEnemyDraw)
 			{
-				player.card_controll.card.showCard(0,new Vector3(-3,-2.5f,0), new Vector3(3,-2.5f,0), Quaternion.identity);	
+				people.card_controll.card.showCard(0,new Vector3(-3,-2.5f,0), new Vector3(3,-2.5f,0), Quaternion.identity);	
 				i = 0;
-				while (player.card_controll.card.getLenHand(1) <=15 && player.card_controll.card.getLenDeck(1) > 0 && i<3 )
+				while (people.card_controll.card.getLenHand(1) <=15 && people.card_controll.card.getLenDeck(1) > 0 && i<3 )
 				{
-					player.card_controll.drawCard(1);
+					people.card_controll.drawCard(1);
 					i++;
 				}
                  
@@ -71,7 +70,7 @@ public class battleSystem : MonoBehaviour
 	
 	public IEnumerator enemyRound()
 	{
-		enemy.roundStart();
+		people.roundStartEnemy();
 		yield return new WaitForSeconds(5f);
 		
 		isEnemyRound = false;

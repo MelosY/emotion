@@ -14,8 +14,9 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
-          <e p="enemy" t="Include">
-            <e p="enemyUnit.cs" t="Include" />
+          <e p="count" t="Include">
+            <e p="consumeCount.cs" t="Include" />
+            <e p="consumeManager.cs" t="Include" />
           </e>
           <e p="manager" t="Include">
             <e p="Card.cs" t="Include" />
@@ -26,11 +27,6 @@
             <e p="Health.cs" t="Include" />
             <e p="healthManager.cs" t="Include" />
           </e>
-          <e p="player" t="Include">
-            <e p="objectUnit.cs" t="Include" />
-            <e p="playerController.cs" t="Include" />
-            <e p="playerUnit.cs" t="Include" />
-          </e>
           <e p="scene_" t="Include">
             <e p="sceneManager.cs" t="Include" />
           </e>
@@ -40,15 +36,17 @@
           <e p="UI" t="Include">
             <e p="UIController.cs" t="Include" />
           </e>
+          <e p="Unit" t="Include">
+            <e p="objectUnit.cs" t="Include" />
+            <e p="peopleUnit.cs" t="Include" />
+          </e>
         </e>
       </e>
       <e p="emotion.sln" t="IncludeFlat" />
       <e p="Library" t="ExcludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="packages" t="ExcludeRecursive" />
-      <e p="Temp" t="ExcludeRecursive">
-        <e p="bin" t="ExcludeRecursive" />
-      </e>
+      <e p="Temp\bin" t="ExcludeRecursive" />
     </e>
   </component>
 </project>

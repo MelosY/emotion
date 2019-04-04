@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class UIController : MonoBehaviour {
 
 	// Use this for initialization
-	public playerUnit player;//先改一下
+	public consumeManager ConsumeCount;
 	public Slider slider_player;
 	public Text text_player;
 	public Slider slider_enemy;
@@ -20,14 +20,14 @@ public class UIController : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
-		slider_player.value = player.health_manager.show("player");
-		text_player.text = player.health_manager.show("player").ToString();
-		expense_player.text = player.expense_manager.show("player").ToString();
-		if (player.health_manager.show("majika") > 0)
+		slider_player.value = ConsumeCount.show(0, "health");
+		text_player.text =  ConsumeCount.show(0, "health").ToString();
+		expense_player.text = ConsumeCount.show(0, "expense").ToString();
+		if ( ConsumeCount.show(1, "health") > 0)
 		{
-			text_enemy.text = player.health_manager.show("majika").ToString();
-			slider_enemy.value = player.health_manager.show("majika");
-			expense_enemy.text = player.expense_manager.show("majika").ToString();
+			text_enemy.text = ConsumeCount.show(1, "health").ToString();
+			slider_enemy.value =ConsumeCount.show(1, "health");
+			expense_enemy.text =ConsumeCount.show(1, "expense").ToString();
 		}
 		else
 		{

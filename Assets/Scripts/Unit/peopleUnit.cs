@@ -16,7 +16,7 @@ public class peopleUnit : MonoBehaviour
 		card_controll.card.createDeck(0);
 		card_controll.create0();
 		
-		ConsumeManager.create(1,"health",10);
+		ConsumeManager.create(1,"health",100);
 		ConsumeManager.create(1,"expense",0);
 		card_controll.card.createDeck(1);
 		card_controll.create1();

@@ -95,9 +95,26 @@ public class cardController : MonoBehaviour
 	{
 		card.washDeck(type);
 	}
-	
-	
-	
+
+
+
+
+
+	public int numOfBonus(int type,int color)
+	{
+		int x = 0;
+		
+		foreach (var i in card.handCards[type])
+		{
+
+			if (i.color==color)
+			{
+				x++;
+			}
+		}
+
+		return x;
+	}
 	
 	
 	public void drawCard(int type)

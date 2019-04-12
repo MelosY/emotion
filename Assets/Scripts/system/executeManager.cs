@@ -53,6 +53,8 @@ public class executeManager : MonoBehaviour
 	{
 		Card.Card_ temp=card_controll.card.useCard(type, x);
 		temp.Base.func(1-type);
+		temp.Base.bonus(1-type,card_controll.numOfBonus(type,temp.color));
+		
 		
 	    
 	}

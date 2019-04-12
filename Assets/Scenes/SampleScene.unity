@@ -256,8 +256,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 684526c5c82363e42bc21271b577fc45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ConsumeManager: {fileID: 188850051}
-  CardController: {fileID: 188850055}
+  temp1: {fileID: 188850051}
+  temp2: {fileID: 188850055}
 --- !u!1 &188850050
 GameObject:
   m_ObjectHideFlags: 0

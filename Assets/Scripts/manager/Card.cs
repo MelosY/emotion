@@ -1,13 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Security.Policy;
 using System.Xml.Xsl;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Card : MonoBehaviour {
-
-    
-    //1是红色，2是
+public class Card : MonoBehaviour
+{
 
     public GameObject[] Images;
     public effect Effect;
@@ -37,17 +36,17 @@ public class Card : MonoBehaviour {
         unNameFire.color = 1;
         unNameFire.pay = 0;
         unNameFire.grade = 3;
-        unNameFire.Base = new unNameFire();
+        unNameFire.Base = Effect.returnUnameFire();
         library.Add(unNameFire);
         
         //无名火
         Card_ anger=new Card_();
         anger.name = "anger";
         anger.image = Images[1];
-        anger.color = 1;
+        anger.color = 2;
         anger.pay = 0;
         anger.grade = 5;
-        anger.Base=new anger();
+        anger.Base=Effect.ReturnAnger();
         library.Add(anger);
     }
     

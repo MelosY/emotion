@@ -2,9 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class sceneManager : MonoBehaviour {
+public class sceneManager : MonoBehaviour
+{
 
-	private Vector3 offset=new Vector3(-42f,-9.7f,-10);
+	public bool isgame = false;
+	public bool ismap = true;
+	public battleSystem battle;
+	private Vector3 gameScene=new Vector3(0,0,-10);
+	
 	public Camera camera;
 	void Start()
 	{
@@ -16,7 +21,8 @@ public class sceneManager : MonoBehaviour {
 	{
 		if (Input.GetKeyUp("n"))
 		{
-			camera.transform.position = offset;
+			camera.transform.position = gameScene;
+			battle.enabled = true;
 		}
 	}
 }

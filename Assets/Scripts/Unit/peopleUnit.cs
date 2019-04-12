@@ -9,7 +9,7 @@ public class peopleUnit : MonoBehaviour
 	public cardController card_controll;
 	public executeManager execute_manager;
 	void Awake () {
-		print("2");
+	    card_controll.init();
 		ConsumeManager.init();
 		ConsumeManager.create(0,"health",100);
 		ConsumeManager.create(0,"expense",5);
@@ -22,7 +22,10 @@ public class peopleUnit : MonoBehaviour
 		card_controll.create1();
 	}
 
-	
+	public void startRound()
+	{
+		execute_manager.startRound();
+	}
 	public void roundStartPlayer()
 	{
 		execute_manager.playerRound();

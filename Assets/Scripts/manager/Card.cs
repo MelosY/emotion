@@ -1,53 +1,80 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Xsl;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Card : MonoBehaviour {
 
+    
+    //1是红色，2是
+
+    public GameObject[] Images;
+    public effect Effect;
     public class Card_
     {
           public GameObject image;
           public string name;
-          public int[] types;
-          public int[] counts;
+          public int color;
+          public int pay;
+          public int grade;
+          public effectBase Base=new effectBase();
     }
     
-    List<List<Card_>> decks=new List<List<Card_>> ();
+    public List<List<Card_>> decks=new List<List<Card_>> ();
     
-    List<List<Card_>> handCards=new List<List<Card_>> ();
+    public List<List<Card_>> handCards=new List<List<Card_>> ();
+    
+    public List<Card_> library=new List<Card_> ();
+
+
+    public void initLibrary()
+    {
+        //Effect.init();
+        Card_ unNameFire=new Card_();
+        unNameFire.name = "unNameFire";
+        unNameFire.image = Images[0];
+        unNameFire.color = 1;
+        unNameFire.pay = 0;
+        unNameFire.grade = 3;
+        unNameFire.Base = new unNameFire();
+        library.Add(unNameFire);
+        
+        //无名火
+        Card_ anger=new Card_();
+        anger.name = "anger";
+        anger.image = Images[1];
+        anger.color = 1;
+        anger.pay = 0;
+        anger.grade = 5;
+        anger.Base=new anger();
+        library.Add(anger);
+    }
     
     
-    public void createCard(int type,GameObject image,string name, int[] types,int[] counts)
+ 
+    
+    
+    public void createCard(int type,string name)
     {
             Card_ temp =new Card_();
-            temp.name = name;
-            temp.image = image;
-            temp.types = types;
-            temp.counts = counts;
+
+        foreach (var i in library)
+        {
+            
+            if (i.name==name)
+            {
+                temp = i;
+                break;
+                
+                ;
+            }
+        }
             decks[type].Add(temp);
-        
     }
     
     
-    public Card_ useCard(int type, int x)
-    {
-            Card_ temp =handCards[type][x];
-      if (type == 0)
-        {
-            GameObject playerCard=GameObject.Find("playerDeck");
-            playerCard.transform.GetChild(x).position=new Vector3(1.5f,1f,0);
-            print(playerCard.transform.GetChild(x).position);
-        }
-        else
-        {
-            GameObject playerCard=GameObject.Find("enemyDeck");
-            playerCard.transform.GetChild(x).position=new Vector3(1.5f,1f,0);
-        }
-            destroyCard(type, x);
-    
-            return temp;
-    }
+ 
     
     public void removeCard(int type, int x)
     {
@@ -89,77 +116,43 @@ public class Card : MonoBehaviour {
     
     public void washDeck(int type)
     {
-        
+        for (int i = 15; i >= 0; i--)
+        {
+            int index1 = Random.Range(0, decks[type].Count);
+            int index2 = Random.Range(0, decks[type].Count);
+            Card_ temp = decks[type][index1];
+            decks[type][index1] = decks[type][index2];
+            decks[type][index2] = temp;
+        }
+    
     }
 
+    
     
     public void getHandCard(int type)
     {
-       // print(handCards[type].Count);
         Card_ temp = decks[type][0];
-        //print(decks[type].Count);
         removeCard(type,0);
-        handCards[type].Add(temp);  
-        //showCard();
-        
+        handCards[type].Add(temp);   
     }
-    public void showCard(int type,Vector3 startPosition,Vector3 endPosition,Quaternion createRotation)
+    
+ 
+    public Card_ useCard(int type, int x)
     {
-        GameObject playerCard=GameObject.Find("playerDeck");
-        GameObject enemyCard=GameObject.Find("enemyDeck");
-        GameObject tempObject;
+        Card_ temp =handCards[type][x];
         if (type == 0)
         {
-            tempObject = playerCard;
+            GameObject playerCard=GameObject.Find("playerDeck");
+            playerCard.transform.GetChild(x).position=new Vector3(1.5f,1f,0);
         }
         else
         {
-            tempObject = enemyCard;
+            GameObject playerCard=GameObject.Find("enemyDeck");
+            playerCard.transform.GetChild(x).position=new Vector3(1.5f,1f,0);
         }
-        int childCount = tempObject.transform.childCount;
-      
-        for (int i = 0; i < childCount; i++)
-        {
-            Destroy(tempObject.transform.GetChild(i).gameObject);
-        }
-
-        Vector3 interval = new Vector3(0.7f,0,0);
-        print(interval);
-        foreach (var temp in handCards[type])
-        {
-            
-            GameObject itemGo = Instantiate(temp.image, startPosition+interval, createRotation);
-            itemGo.transform.SetParent(tempObject.transform);
-            startPosition += interval;
-            itemGo.GetComponent<objectUnit>().showBack(type);
-        }
-      
-        //itemPositionList.Add(createPosition);
-    }
-
-    public int getLenHand(int type)
-    {
-        return handCards[type].Count;
-    }
+        destroyCard(type, x);
     
-    public int getLenDeck(int type)
-    {
-        return decks[type].Count;
+        return temp;
     }
-    
-
-    public void forwardCard(int index_now,int index_last)
-    {
-            GameObject playerCard=GameObject.Find("playerDeck");
-            playerCard.transform.GetChild(index_now).position=playerCard.transform.GetChild(index_now).position+new Vector3(0,0.5f,0);
-            if (index_last >= 0)
-            {
-                playerCard.transform.GetChild(index_last).position=playerCard.transform.GetChild(index_last).position-new Vector3(0,0.5f,0);
-            }
-       
-       // print(1);
-    }
-
-   
 }
 

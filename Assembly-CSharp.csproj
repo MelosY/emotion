@@ -57,13 +57,11 @@
      <Compile Include="Assets\Scripts\count\consumeManager.cs" />
      <Compile Include="Assets\Scripts\manager\Card.cs" />
      <Compile Include="Assets\Scripts\manager\cardController.cs" />
-     <Compile Include="Assets\Scripts\manager\executeManager.cs" />
-     <Compile Include="Assets\Scripts\manager\Expense.cs" />
-     <Compile Include="Assets\Scripts\manager\expenseManager.cs" />
-     <Compile Include="Assets\Scripts\manager\Health.cs" />
-     <Compile Include="Assets\Scripts\manager\healthManager.cs" />
+     <Compile Include="Assets\Scripts\manager\condition.cs" />
+     <Compile Include="Assets\Scripts\manager\effect.cs" />
      <Compile Include="Assets\Scripts\scene_\sceneManager.cs" />
      <Compile Include="Assets\Scripts\system\battleSystem.cs" />
+     <Compile Include="Assets\Scripts\system\executeManager.cs" />
      <Compile Include="Assets\Scripts\UI\UIController.cs" />
      <Compile Include="Assets\Scripts\Unit\objectUnit.cs" />
      <Compile Include="Assets\Scripts\Unit\peopleUnit.cs" />

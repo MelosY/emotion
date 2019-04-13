@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.PlayerLoop;
 using UnityEngine.UI;
 
 public class UIController : MonoBehaviour {
@@ -13,6 +14,8 @@ public class UIController : MonoBehaviour {
 	public Text text_enemy;
 	public Text expense_player;
 	public Text expense_enemy;
+	public Text bonus;
+	public Text grade;
 	void Start () {
 		
 	}
@@ -34,4 +37,26 @@ public class UIController : MonoBehaviour {
 			text_enemy.text = "怪物死了";
 		}
 	}
+
+
+	public void showBonus(int x)
+	{
+		string temp = "bonus: -" + x;
+		bonus.text = temp;
+	}
+
+	public void showGrade(string effect)
+	{
+		grade.text = "grade:"+effect;
+		StartCoroutine(wait());
+	}
+
+	public IEnumerator wait()
+	{
+		print(122311);
+		yield return  new WaitForSeconds(2f);
+		grade.text = "";
+		print(1233221);
+	}
+	
 }

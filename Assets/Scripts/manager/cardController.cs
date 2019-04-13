@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Policy;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -114,6 +115,39 @@ public class cardController : MonoBehaviour
 		}
 
 		return x;
+	}
+
+	public bool isGrade(int type, int color,string name)
+	{
+		int x = 0;
+		Card.Card_ temp=new Card.Card_();
+		foreach (var i in card.handCards[type])
+		{
+
+			if (i.color==color)
+			{
+				x++;
+			}
+		}
+
+		foreach (var i in card.library)
+		{
+            
+			if (i.name==name)
+			{
+				temp = i;
+				break;
+                
+				;
+			}
+		}
+
+		if (x>= temp.grade)
+		{
+			return true;
+		}
+
+		return false;
 	}
 	
 	

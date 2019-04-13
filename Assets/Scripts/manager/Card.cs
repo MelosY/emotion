@@ -42,12 +42,21 @@ public class Card : MonoBehaviour
         //无名火
         Card_ anger=new Card_();
         anger.name = "anger";
-        anger.image = Images[1];
-        anger.color = 2;
+        anger.image = Images[0];
+        anger.color = 1;
         anger.pay = 0;
         anger.grade = 5;
         anger.Base=Effect.ReturnAnger();
         library.Add(anger);
+        Card_ recover=new Card_();
+        recover.name = "recover";
+        recover.image = Images[1];
+        recover.color = 2;
+        recover.pay = 1;
+        recover.grade = 5;
+        recover.Base=Effect.ReturnRecover();
+        library.Add(recover);
+        
     }
     
     

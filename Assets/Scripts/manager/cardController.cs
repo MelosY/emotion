@@ -18,28 +18,34 @@ public class cardController : MonoBehaviour
 	
 	public void create0()
 	{
-	    card.createCard(0,"anger");
-		card.createCard(0,"anger");
-		card.createCard(0,"anger");
-		card.createCard(0,"anger");
-		card.createCard(0,"anger");
+
 		card.createCard(0,"unNameFire");
 		card.createCard(0,"unNameFire");
 		card.createCard(0,"unNameFire");
 		card.createCard(0,"unNameFire");
 		card.createCard(0,"unNameFire");
 		card.createCard(0,"unNameFire");
-		card.createCard(0,"anger");
-		card.createCard(0,"anger");
-		card.createCard(0,"anger");
-		card.createCard(0,"anger");
-		card.createCard(0,"anger");
+
 		card.createCard(0,"unNameFire");
 		card.createCard(0,"unNameFire");
 		card.createCard(0,"unNameFire");
 		card.createCard(0,"unNameFire");
 		card.createCard(0,"unNameFire");
 		card.createCard(0,"unNameFire");
+		
+		card.createCard(0,"recover");
+		card.createCard(0,"recover");
+		card.createCard(0,"recover");
+		card.createCard(0,"recover");
+		card.createCard(0,"recover");
+		
+			
+		card.createCard(0,"recover");
+		card.createCard(0,"recover");
+		card.createCard(0,"recover");
+		card.createCard(0,"recover");
+		card.createCard(0,"recover");
+		
 		washDeck(0);
 	
 	}

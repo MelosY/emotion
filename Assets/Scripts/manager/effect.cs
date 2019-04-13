@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.ComTypes;
 using System.Runtime.Remoting.Messaging;
 using System.Security.Policy;
 using UnityEngine;
@@ -66,7 +67,34 @@ using UnityEngine;
             UI.showGrade("加入怒火到牌库");
         }
     }
+public class recover : effectBase
+{
+    public recover(consumeManager temp1,cardController temp2,UIController temp3)
+    {
+        ConsumeManager = temp1;
+        CardController = temp2;
+        UI = temp3;
+    }
+        
+    public override void func(int type )
+    {
+        
+        ConsumeManager.recover(1-type,"health",10);
+        
+    }
 
+    public override void bonus(int type, int x)
+    {
+        ConsumeManager.recover(1-type,"health",2*x);
+        UI.showBonus(2*x);
+    }
+
+    public override void gradeFunc(int type)
+    {
+        ConsumeManager.recover(1-type,"health",2*CardController.numOfBonus(type,2));
+        
+    }
+}
     public class anger : effectBase
     {
         
@@ -79,7 +107,7 @@ using UnityEngine;
         public override void func(int type)
         {
             ConsumeManager.damage(type,"health",10);
-          
+           ConsumeManager.damage(type,"health",1);
         }
 
         public override void bonus(int type, int x)
@@ -108,5 +136,8 @@ public class effect : MonoBehaviour
         return new anger(temp1,temp2,temp3);
     }
 
-    
+    public recover ReturnRecover()
+    {
+        return new recover(temp1,temp2,temp3);
+    }
 }

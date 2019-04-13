@@ -41,7 +41,7 @@ public class UIController : MonoBehaviour {
 
 	public void showBonus(int x)
 	{
-		string temp = "bonus: -" + x;
+		string temp = "bonus:" + x;
 		bonus.text = temp;
 	}
 

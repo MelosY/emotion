@@ -26,7 +26,7 @@ public class consumeCount : MonoBehaviour {
 		}
 		else if (name=="expense")
 		{
-			Count[1][type].count+=count;
+			Count[1][type].count=count;
 		}
 	}
 

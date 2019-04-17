@@ -58,6 +58,7 @@
      <Compile Include="Assets\Scripts\manager\Card.cs" />
      <Compile Include="Assets\Scripts\manager\cardController.cs" />
      <Compile Include="Assets\Scripts\manager\condition.cs" />
+     <Compile Include="Assets\Scripts\manager\conditionManager.cs" />
      <Compile Include="Assets\Scripts\manager\effect.cs" />
      <Compile Include="Assets\Scripts\scene_\sceneManager.cs" />
      <Compile Include="Assets\Scripts\system\battleSystem.cs" />

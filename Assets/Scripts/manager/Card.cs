@@ -29,7 +29,6 @@ public class Card : MonoBehaviour
 
     public void initLibrary()
     {
-        //Effect.init();
         Card_ unNameFire=new Card_();
         unNameFire.name = "unNameFire";
         unNameFire.image = Images[0];
@@ -49,6 +48,8 @@ public class Card : MonoBehaviour
         anger.Base=Effect.ReturnAnger();
         library.Add(anger);
         Card_ recover=new Card_();
+        
+        //
         recover.name = "recover";
         recover.image = Images[1];
         recover.color = 2;

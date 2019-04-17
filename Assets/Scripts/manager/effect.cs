@@ -17,6 +17,7 @@ using UnityEngine;
 
         public consumeManager ConsumeManager;
         public cardController CardController;
+        public conditionManager ConditionManager;
         public UIController UI;
         public effectBase()
         {
@@ -41,11 +42,12 @@ using UnityEngine;
 
     public class unNameFire : effectBase
     {
-        public unNameFire(consumeManager temp1,cardController temp2,UIController temp3)
+        public unNameFire(consumeManager temp1,cardController temp2,conditionManager temp3,UIController temp4)
         {
             ConsumeManager = temp1;
             CardController = temp2;
-            UI = temp3;
+            ConditionManager = temp3;
+            UI = temp4;
         }
         
         public override void func(int type )
@@ -53,6 +55,7 @@ using UnityEngine;
         
             ConsumeManager.damage(type,"health",10);
             CardController.addCard(type,"anger");
+            ConditionManager.set(type,"dizzy",2);
         }
 
         public override void bonus(int type, int x)
@@ -69,11 +72,12 @@ using UnityEngine;
     }
 public class recover : effectBase
 {
-    public recover(consumeManager temp1,cardController temp2,UIController temp3)
+    public recover(consumeManager temp1,cardController temp2,conditionManager temp3,UIController temp4)
     {
         ConsumeManager = temp1;
         CardController = temp2;
-        UI = temp3;
+        ConditionManager = temp3;
+        UI = temp4;
     }
         
     public override void func(int type )
@@ -98,11 +102,12 @@ public class recover : effectBase
     public class anger : effectBase
     {
         
-        public anger(consumeManager temp1,cardController temp2,UIController temp3)
+        public anger(consumeManager temp1,cardController temp2,conditionManager temp3,UIController temp4)
         {
             ConsumeManager = temp1;
             CardController = temp2;
-            UI = temp3;
+            ConditionManager = temp3;
+            UI = temp4;
         }
         public override void func(int type)
         {
@@ -125,19 +130,20 @@ public class effect : MonoBehaviour
 {
     public consumeManager temp1;
     public cardController temp2;
-    public UIController temp3;
+    public conditionManager temp3;
+    public UIController temp4;
     public unNameFire returnUnameFire()
     {
-        return new unNameFire(temp1,temp2,temp3);
+        return new unNameFire(temp1,temp2,temp3,temp4);
     }
     
     public anger ReturnAnger()
     {
-        return new anger(temp1,temp2,temp3);
+        return new anger(temp1,temp2,temp3,temp4);
     }
 
     public recover ReturnRecover()
     {
-        return new recover(temp1,temp2,temp3);
+        return new recover(temp1,temp2,temp3,temp4);
     }
 }

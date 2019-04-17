@@ -22,6 +22,7 @@
             <e p="Card.cs" t="Include" />
             <e p="cardController.cs" t="Include" />
             <e p="condition.cs" t="Include" />
+            <e p="conditionManager.cs" t="Include" />
             <e p="effect.cs" t="Include" />
           </e>
           <e p="scene_" t="Include">

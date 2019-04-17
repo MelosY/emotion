@@ -199,6 +199,7 @@ GameObject:
   - component: {fileID: 155967746}
   - component: {fileID: 155967745}
   - component: {fileID: 155967747}
+  - component: {fileID: 155967748}
   m_Layer: 0
   m_Name: Library
   m_TagString: Untagged
@@ -258,7 +259,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   temp1: {fileID: 188850051}
   temp2: {fileID: 188850055}
-  temp3: {fileID: 888537182}
+  temp3: {fileID: 188850052}
+  temp4: {fileID: 888537182}
+--- !u!114 &155967748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 155967743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34a1e8f7e15b227408b6778b4bec92e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &188850050
 GameObject:
   m_ObjectHideFlags: 0
@@ -270,6 +283,7 @@ GameObject:
   - component: {fileID: 188850055}
   - component: {fileID: 188850054}
   - component: {fileID: 188850051}
+  - component: {fileID: 188850052}
   m_Layer: 0
   m_Name: AllManager
   m_TagString: Untagged
@@ -289,6 +303,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Consume: {fileID: 155967746}
+--- !u!114 &188850052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 188850050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1641b2e0dfa5c743aadf54593f9e697, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Condition: {fileID: 155967748}
+  BattleSystem: {fileID: 888537181}
 --- !u!4 &188850053
 Transform:
   m_ObjectHideFlags: 0
@@ -1184,6 +1211,7 @@ MonoBehaviour:
   isPlayDraw: 1
   isEnemyDraw: 0
   isend: 0
+  roundCount: 0
 --- !u!114 &888537182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1926,6 +1954,7 @@ MonoBehaviour:
   ConsumeManager: {fileID: 188850051}
   card_controll: {fileID: 188850055}
   execute_manager: {fileID: 188850054}
+  ConditionManager: {fileID: 188850052}
 --- !u!212 &1586252473
 SpriteRenderer:
   m_ObjectHideFlags: 0

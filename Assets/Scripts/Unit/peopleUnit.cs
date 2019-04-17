@@ -8,7 +8,8 @@ public class peopleUnit : MonoBehaviour
 	public consumeManager ConsumeManager;
 	public cardController card_controll;
 	public executeManager execute_manager;
-	void Awake () {
+	public conditionManager ConditionManager;
+	public void init () {
 	    card_controll.init();
 		ConsumeManager.init();
 		ConsumeManager.create(0,"health",100);
@@ -20,6 +21,8 @@ public class peopleUnit : MonoBehaviour
 		ConsumeManager.create(1,"expense",0);
 		card_controll.card.createDeck(1);
 		card_controll.create1();
+		
+		ConditionManager.init();
 	}
 
 	public void startRound()

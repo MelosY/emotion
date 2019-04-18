@@ -18,6 +18,22 @@ public class Card : MonoBehaviour
           public int pay;
           public int grade;
           public effectBase Base=new effectBase();
+
+        public Card_()
+        {
+            
+        }
+        public Card_(GameObject temp1, string name, int color, int pay, int grade, effectBase temp2)
+        {
+            this.image = temp1;
+            this.name = name;
+            this.color = color;
+            this.pay = pay;
+            this.grade = grade;
+            this.Base = temp2;
+
+        }
+          
     }
     
     public List<List<Card_>> decks=new List<List<Card_>> ();
@@ -29,27 +45,31 @@ public class Card : MonoBehaviour
 
     public void initLibrary()
     {
-        Card_ unNameFire=new Card_();
-        unNameFire.name = "unNameFire";
-        unNameFire.image = Images[0];
-        unNameFire.color = 1;
-        unNameFire.pay = 0;
-        unNameFire.grade = 3;
-        unNameFire.Base = Effect.returnUnameFire();
+        Card_ unNameFire=new Card_(Images[0],"unNameFire",1,0,3,Effect.returnUnameFire());
         library.Add(unNameFire);
         
         //无名火
-        Card_ anger=new Card_();
-        anger.name = "anger";
-        anger.image = Images[0];
-        anger.color = 1;
-        anger.pay = 0;
-        anger.grade = 5;
-        anger.Base=Effect.ReturnAnger();
+        Card_ anger=new Card_(Images[0],"anger",1,0,5,Effect.ReturnAnger());
         library.Add(anger);
-        Card_ recover=new Card_();
         
-        //
+        //激怒
+        Card_ rage=new Card_(Images[0],"rage",1,1,5,Effect.ReturnRage());
+        library.Add(rage);
+        
+        //处决
+        Card_ execute=new Card_(Images[0],"execute",1,2,3,Effect.ReturnExecute());
+        library.Add(execute);
+        
+        //挑衅
+        Card_ provoke=new Card_(Images[0],"provoke",1,3,4,Effect.ReturnProvoke());
+        library.Add(provoke);
+        
+        //狂暴
+        Card_ fury=new Card_(Images[0],"fury",1,3,5,Effect.ReturnFury());
+        library.Add(provoke);
+        
+        
+        Card_ recover=new Card_();
         recover.name = "recover";
         recover.image = Images[1];
         recover.color = 2;
@@ -91,10 +111,7 @@ public class Card : MonoBehaviour
     }
 
     
-    public void destroyCard(int type, int x)
-    {
-        handCards[type].Remove((handCards[type][x]));
-    }
+  
     
     
     public void createDeck(int type)
@@ -146,22 +163,6 @@ public class Card : MonoBehaviour
     }
     
  
-    public Card_ useCard(int type, int x)
-    {
-        Card_ temp =handCards[type][x];
-        if (type == 0)
-        {
-            GameObject playerCard=GameObject.Find("playerDeck");
-            playerCard.transform.GetChild(x).position=new Vector3(1.5f,1f,0);
-        }
-        else
-        {
-            GameObject playerCard=GameObject.Find("enemyDeck");
-            playerCard.transform.GetChild(x).position=new Vector3(1.5f,1f,0);
-        }
-        destroyCard(type, x);
-    
-        return temp;
-    }
+   
 }
 

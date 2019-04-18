@@ -74,15 +74,28 @@ public class condition : MonoBehaviour
         RoundList.Add(playerRounds);
         RoundList.Add(enemyRounds);
         
-        
+        //眩晕
         conditionBase dizzy0=new conditionBase("dizzy");
-        round  temp0=new round("dizzy");
+        round  dizzyRound0=new round("dizzy");
         conditionBase dizzy1=new conditionBase("dizzy");
-        round  temp1=new round("dizzy");
+        round  dizzyRound1=new round("dizzy");
         ConditionList[0].Add(dizzy0);
-        RoundList[0].Add(temp0);
+        RoundList[0].Add(dizzyRound0);
         ConditionList[1].Add(dizzy1);
-        RoundList[1].Add(temp1);
+        RoundList[1].Add(dizzyRound1);
+        
+        //挑衅
+        conditionBase provoke0=new conditionBase("provoke");
+        round  provokeRound0=new round("provoke");
+        conditionBase provoke1=new conditionBase("provoke");
+        round  provokeRound1=new round("provoke");
+        ConditionList[0].Add(provoke0);
+        RoundList[0].Add(provokeRound0);
+        ConditionList[1].Add(provoke1);
+        RoundList[1].Add(provokeRound1);
+        
+        
+        
          
     }
     

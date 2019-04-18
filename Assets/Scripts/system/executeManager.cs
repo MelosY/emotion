@@ -51,12 +51,12 @@ public class executeManager : MonoBehaviour
 	}
 	public void execute(int type,int x)
 	{
-		Card.Card_ temp=card_controll.card.useCard(type, x);
+		Card.Card_ temp=card_controll.useCard(type, x);
 		temp.Base.func(1-type);
 		temp.Base.bonus(1-type,card_controll.numOfBonus(type,temp.color));
 		if (card_controll.isGrade(type,temp.color,temp.name))
 		{
-			temp.Base.gradeFunc(type);
+			temp.Base.gradeFunc(1-type);
 		}
 		
 	    

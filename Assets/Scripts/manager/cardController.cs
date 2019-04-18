@@ -222,8 +222,36 @@ public class cardController : MonoBehaviour
 			itemGo.transform.SetParent(tempObject.transform);
 			startPosition += interval;
 			itemGo.GetComponent<objectUnit>().showBack(type);
+		}    
+	}
+
+	public Card.Card_ useCard(int type, int x)
+	{
+		Card.Card_ temp = card.handCards[type][x];
+		if (type == 0)
+		{
+			GameObject playerCard = GameObject.Find("playerDeck");
+			playerCard.transform.GetChild(x).position = new Vector3(1.5f, 1f, 0);
 		}
-      
-       
+		else
+		{
+			GameObject playerCard = GameObject.Find("enemyDeck");
+			playerCard.transform.GetChild(x).position = new Vector3(1.5f, 1f, 0);
+		}
+
+		destroyCard(type, x);
+
+		return temp;
+	}
+	
+	/*public void destroyDeck(int type)
+	{
+		card.decks.Remove(card.decks[type]);
+		card.handCards.Remove(card.handCards[type]);
+	}*/
+	
+	public void destroyCard(int type, int x)
+	{
+		card.handCards[type].Remove((card.handCards[type][x]));
 	}
 }

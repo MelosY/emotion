@@ -66,7 +66,7 @@ public class Card : MonoBehaviour
         
         //狂暴
         Card_ fury=new Card_(Images[0],"fury",1,3,5,Effect.ReturnFury());
-        library.Add(provoke);
+        library.Add(fury);
         
         
         Card_ recover=new Card_();
@@ -86,7 +86,7 @@ public class Card : MonoBehaviour
     
     public void createCard(int type,string name)
     {
-            Card_ temp =new Card_();
+          Card_ temp =new Card_();
 
         foreach (var i in library)
         {

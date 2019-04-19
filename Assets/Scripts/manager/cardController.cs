@@ -19,12 +19,23 @@ public class cardController : MonoBehaviour
 	public void create0()
 	{
 
-		card.createCard(0,"unNameFire");
-		card.createCard(0,"unNameFire");
-		card.createCard(0,"unNameFire");
-		card.createCard(0,"unNameFire");
-		card.createCard(0,"unNameFire");
-		card.createCard(0,"unNameFire");
+		card.createCard(0,"rage");
+		card.createCard(0,"rage");
+		card.createCard(0,"rage");
+		card.createCard(0,"rage");
+		card.createCard(0,"execute");
+		card.createCard(0,"execute");
+		card.createCard(0,"execute");
+		card.createCard(0,"execute");
+		card.createCard(0,"provoke");
+		card.createCard(0,"provoke");
+		card.createCard(0,"provoke");
+		card.createCard(0,"provoke");
+		card.createCard(0,"fury");
+		card.createCard(0,"fury");
+		card.createCard(0,"fury");
+		card.createCard(0,"fury");
+		
 
 		card.createCard(0,"unNameFire");
 		card.createCard(0,"unNameFire");
@@ -86,7 +97,6 @@ public class cardController : MonoBehaviour
 	
 	public void addCard(int type,string name)
 	{
-		int temp_type=1;
 		card.createCard(type,name);
 
 	

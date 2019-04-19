@@ -96,7 +96,7 @@ public class effectBase
      
              public override void gradeFunc(int type)
              {
-                 CardController.addCard(type,"anger");
+                 CardController.addCard(1-type,"anger");
              }
          }
 
@@ -203,22 +203,30 @@ public class effectBase
          }
          public override void func(int type)
          {
-             int i;
-             int count = Random.Range(0, CardController.getLenHand(1-type));
-             for (int i = 0; i < count; i++)
+             
+             int num = Random.Range(2, 6);
+             for (int i = 0; i < num && i<CardController.getLenHand(type); i++)
              {
                  int count = Random.Range(0, CardController.getLenHand(1-type)); 
+                 CardController.destroyCard(1-type,count);
+                 ConsumeManager.damage(type,"health",40);
              }
+
+             transive = num;
          }
      
          public override void bonus(int type, int x)
          {
-              
+             ConsumeManager.damage(type,"health",2*x);
+             UI.showBonus(2*x);
          }
      
          public override void gradeFunc(int type)
          {
-             
+             for (int i = 0; i < transive; i++)
+             {
+                 CardController.addCard(1-type,"anger");
+             }
          }
      }
 
